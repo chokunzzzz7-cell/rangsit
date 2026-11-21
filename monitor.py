@@ -15,7 +15,17 @@ LABEL = {"green": "Normal", "yellow": "Warning", "orange": "High", "red": "Criti
 def load_image(path=None):
     if path:
         return Image.open(path).convert("RGB")
-    req = urllib.request.Request(CFG["snapshot_url"], headers={
+    import re
+    url = CFG["snapshot_url"]
+    try:  # the snapshot address changes, so read the current one from the camera page
+        page = urllib.request.Request(CFG["camera_page"], headers={"User-Agent": "Mozilla/5.0"})
+        html = urllib.request.urlopen(page, timeout=30).read().decode("utf-8", "ignore")
+        m = re.search(r'https?://[^"\'\s]+/streams/[^"\'\s]+/snapshot\.jpg', html)
+        if m:
+            url = m.group(0)
+    except Exception as e:
+        print("could not read camera page:", e)
+    req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0", "Referer": CFG["camera_page"]})
     return Image.open(io.BytesIO(urllib.request.urlopen(req, timeout=30).read())).convert("RGB")
 
