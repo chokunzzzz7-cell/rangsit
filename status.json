@@ -25,15 +25,19 @@
   {
    "t": "2026-11-22T22:01:56+00:00",
    "level": "green"
+  },
+  {
+   "t": "2026-11-23T02:35:59+00:00",
+   "level": "green"
   }
  ],
- "checked_at": "2026-11-22T22:01:56+00:00",
+ "checked_at": "2026-11-23T02:35:59+00:00",
  "level": "green",
  "pending": null,
  "changed_at": "2026-11-21T07:50:45+00:00",
  "fractions": {
-  "red": 0.99,
-  "orange": 0.94,
-  "yellow": 0.91
+  "red": 1.0,
+  "orange": 0.95,
+  "yellow": 0.92
  }
 }
