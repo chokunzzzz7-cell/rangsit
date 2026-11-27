@@ -1,6 +1,6 @@
 {
- "ok": true,
- "note": "",
+ "ok": false,
+ "note": "Camera error: HTTP Error 404: Not Found",
  "history": [
   {
    "t": "2026-11-21T07:50:45+00:00",
@@ -59,7 +59,7 @@
    "level": "green"
   }
  ],
- "checked_at": "2026-11-26T21:56:21+00:00",
+ "checked_at": "2026-11-27T03:59:45+00:00",
  "level": "green",
  "pending": null,
  "changed_at": "2026-11-21T07:50:45+00:00",
